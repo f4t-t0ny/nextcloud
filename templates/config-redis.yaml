@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  redis-config: |
+    maxmemory 1500mb
+kind: ConfigMap
+metadata:
+  name: redis-config
+  namespace: default

@@ -1,0 +1,16 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: nextcloud-redirect-regex
+spec:
+  redirectRegex:
+    regex: "^/.well-known/ca(l|rd)dav"
+    replacement: "/remote.php/dav/"
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: nextcloud-headers
+spec:
+  headers:
+    stsSeconds: 15552000
